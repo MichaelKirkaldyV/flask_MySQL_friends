@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends!</title>
+</head>
+<body>
+
+	<h1>These are all my friends!</h1>
+	<!--Displays list of dictionaries of friends!-->
+	<!--{{all_friends}}!-->
+	{%for users in all_friends%}
+	<h3>First Name: {{users['first_name']}}</h3>
+	<h3>Last Name: {{users['last_name']}}</h3>
+	<h3>Occupation:{{ users['occupation']}}</h3>
+	<hr>
+	{%endfor%}
+	
+
+	<h1>Add a Friend</h1>
+	<!--this form submits to the add_friend route which creates a insert query to the database!-->
+	<form action="add_friend" method='post'>
+		First Name: <input type="text" name="first_name">
+		Last Name: <input type="text" name="last_name">
+		Occupation: <input type="text" name="occupation">
+		<input type="submit" name="submit" value="Add">
+	</form>
+
+
+
+</body>
+</html>
